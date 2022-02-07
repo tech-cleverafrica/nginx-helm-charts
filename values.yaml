@@ -36,7 +36,6 @@ controller:
 
   # -- Configures the ports that the nginx-controller listens on
   containerPort:
-    iso: 8000
     http: 80
     https: 443
 
@@ -90,14 +89,14 @@ controller:
   ## Disabled by default
   hostPort:
     # -- Enable 'hostPort' or not
-    enabled: false
+    enabled: true
     ports:
       # -- 'hostPort' isosw-service port
       iso: 8000
       # -- 'hostPort' http port
-      http: 80
+      # http: 80
       # -- 'hostPort' https port
-      https: 443
+      # https: 443
 
   # -- Election ID to use for status update
   electionID: ingress-controller-leader
