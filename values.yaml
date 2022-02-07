@@ -90,10 +90,10 @@ controller:
   ## Disabled by default
   hostPort:
     # -- Enable 'hostPort' or not
-    enabled: true
+    enabled: false
     ports:
       # -- 'hostPort' isosw-service port
-      isosw-service: 8000
+      iso: 8000
       # -- 'hostPort' http port
       http: 80
       # -- 'hostPort' https port
