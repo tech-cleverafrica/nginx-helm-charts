@@ -36,6 +36,7 @@ controller:
 
   # -- Configures the ports that the nginx-controller listens on
   containerPort:
+    iso: 8000
     http: 80
     https: 443
 
@@ -89,8 +90,10 @@ controller:
   ## Disabled by default
   hostPort:
     # -- Enable 'hostPort' or not
-    enabled: false
+    enabled: true
     ports:
+      # -- 'hostPort' isosw-service port
+      iso: 8000
       # -- 'hostPort' http port
       http: 80
       # -- 'hostPort' https port
@@ -485,10 +488,12 @@ controller:
       - IPv4
 
     ports:
+      iso: 8000
       http: 80
       https: 443
 
     targetPorts:
+      iso: iso
       http: http
       https: https
 
@@ -501,6 +506,7 @@ controller:
     ##   tcp:
     ##     8080: 32808
     nodePorts:
+      iso: ""
       http: ""
       https: ""
       tcp: {}
@@ -897,8 +903,8 @@ imagePullSecrets: []
 # -- TCP service key:value pairs
 ## Ref: https://github.com/kubernetes/ingress-nginx/blob/main/docs/user-guide/exposing-tcp-udp-services.md
 ##
-tcp: {}
-#  8080: "default/example-tcp-svc:9000"
+tcp: 
+ 8000: "default/isosw-service:8000"
 
 # -- UDP service key:value pairs
 ## Ref: https://github.com/kubernetes/ingress-nginx/blob/main/docs/user-guide/exposing-tcp-udp-services.md
