@@ -446,7 +446,12 @@ controller:
     ##
     appProtocol: true
 
-    annotations: {}
+    annotations: 
+      service.beta.kubernetes.io/aws-load-balancer-ssl-cert: arn:aws:acm:eu-west-2:255357305962:certificate/78992cbe-197b-4b18-8a25-7a6bca2d4480
+      service.beta.kubernetes.io/aws-load-balancer-backend-protocol: "tcp"
+      service.beta.kubernetes.io/aws-load-balancer-ssl-ports: "8000"
+      service.beta.kubernetes.io/aws-load-balancer-connection-idle-timeout: '3600'
+      
     labels: {}
     # clusterIP: ""
 
