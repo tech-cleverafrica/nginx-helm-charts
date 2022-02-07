@@ -154,7 +154,7 @@ controller:
 
   tcp:
     # -- Allows customization of the tcp-services-configmap; defaults to $(POD_NAMESPACE)
-    configMapNamespace: ""
+    configMapNamespace: "kube-system"
     # -- Annotations to be added to the tcp config configmap
     annotations: {}
 
