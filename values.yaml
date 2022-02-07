@@ -95,9 +95,9 @@ controller:
       # -- 'hostPort' isosw-service port
       iso: 8000
       # -- 'hostPort' http port
-      http: 80
-      # -- 'hostPort' https port
-      https: 443
+      # http: 80
+      # # -- 'hostPort' https port
+      # https: 443
 
   # -- Election ID to use for status update
   electionID: ingress-controller-leader
